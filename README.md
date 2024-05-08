@@ -112,7 +112,7 @@ This section of the report discusses how the application meets its functional re
 ### Heap Data Structure:
 
 #### Feature 1: Insert Key
-- **Description:** Adds an element to the heap. The element is initially added to the end of the array, and then the heap properties are restored by bubbling the element up as necessary.
+- **Description:** Adds an element to the heap. The element is initially added to the end of the array, and then the heap properties are restored by bubbling the element up as necessary. This method is inherited by both subclasses.
 - **Code Snippet:**
     ```python
     def insert_key(self, key):
@@ -127,7 +127,7 @@ This section of the report discusses how the application meets its functional re
     ```
 
 #### Feature 2: Bubble Up
-- **Description:** The `bubble up` (or "percolate up") method is essential for maintaining the heap property after a new key is inserted at the bottom of the heap. This method iteratively compares the inserted element with its parent, swapping them if the heap condition (maximum or minimum) is not satisfied. This process continues until the element is in a position where the heap property is correctly maintained.
+- **Description:** The `bubble up` (or "percolate up") method is essential for maintaining the heap property after a new key is inserted at the bottom of the heap. This method iteratively compares the inserted element with its parent, swapping them if the heap condition (maximum or minimum) is not satisfied. This process continues until the element is in a position where the heap property is correctly maintained. This method as many others in these two subclasses follows the principle of Polymorphism by having different implementations in either class while retaining the same method signature.
 
 - **Base Implementation:**
     ```python
@@ -256,7 +256,7 @@ These detailed explanations and implementations highlight how the `bubble up` me
     ```
 
 #### Feature 7: Return Heap Contents
-- **Description:** Returns a list of all active elements in the heap. This allows other parts of the program or external systems to access heap data without directly interacting with the heap structure.
+- **Description:** Returns a list of all active elements in the heap. This allows other parts of the program or external systems to access heap data without directly interacting with the heap structure. 
 - **Code Snippet:**
     ```python
     def return_heap_contents(self):
@@ -421,7 +421,7 @@ This documentation provides a comprehensive overview of `CSVDataHandler` functio
 ### CommandInvoker Class Overview
 
 #### Description
-The `CommandInvoker` class plays a crucial role in handling commands in an application. It acts as the central point through which all user commands pass, executing and undoing them as needed. By employing the Singleton design pattern, it ensures that there is only one instance of `CommandInvoker` throughout the application, maintaining a consistent state across various components that might need to invoke commands.
+The `CommandInvoker` class plays a crucial role in handling commands in an application. It acts as the central point through which all user commands pass, executing and undoing them as needed. By employing the Singleton design pattern, it ensures that there is only one instance of `CommandInvoker` throughout the application, maintaining a consistent state across various components that might need to invoke commands. The command classes themselves are a perfect example of the principle of Abstraction, their functionality is apparent just from the method signature, and doesn't require any further knowledge to adopt.
 
 #### Singleton Design Pattern
 - **Purpose:** The Singleton pattern ensures that a class has only one instance and provides a global point of access to it which is useful since we want a single command interface. This is achieved in the `CommandInvoker` class using a custom metaclass, `SingletonMeta`, which controls instance creation.
@@ -444,7 +444,7 @@ The `CommandInvoker` class plays a crucial role in handling commands in an appli
 #### Class Functions
 
 ##### Execute Command
-- **Description:** Executes a command object, stores it in the command history, and logs its description for later review.
+- **Description:** Executes a command object, stores it in the command history, and logs its description for later review. Encapsulation is present with the command history list which is a private attribute that is only accessible within its own class. 
 - **Code Snippet:**
     ```python
     def execute_command(self, command):
@@ -551,7 +551,3 @@ This coursework has provided a deep dive into the fundamentals of Python, includ
 - **A Robust Application Framework:** The use of design patterns and OOP principles has resulted in a robust, maintainable program structure that can efficiently handle complex data manipulations and user interactions.
 - **Practical Implementation Skills:** Gained practical experience in implementing file operations with CSV files, enhancing the program's ability to manage external data effectively.
 - **Future Prospects:** The program offers a solid foundation for future enhancements, including the potential addition of a real-time updating interface and further detailed data processing features. This groundwork sets the stage for possible expansions, such as incorporating graphical user interfaces or extending functionality to handle additional data types or operations.
-
-## Resources and References
-**WIP**
-
