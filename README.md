@@ -5,7 +5,7 @@
 The primary goal of this coursework is to develop a program that operates as a testing tool for observing and understanding the behavior of heap and stack data structures through practical operations, while incorporating object-oriented programming (OOP) principles. This application is designed to enable students and software developers to visually and interactively explore how these data structures function and handle data in various scenarios, thereby enhancing their grasp of various forms of data management in software development.
 
 ### About the Application
-Our application, named Shade [ Stack-Heap And Data Engineering ], is a Python console application that focuses on demonstrating and testing operations within heap and stack data structures. It is designed to allow users to perform various operations such as inserting elements, printing the stack, and visualizing heaps as binary trees. Additionally, the application supports importing and exporting data from .csv files according to the type of data structure being manipulated. This functionality is particularly useful for educational purposes, enabling users to explore and understand the dynamic behavior of these fundamental data structures in computing.
+This application, named Shade [ Stack-Heap And Data Engineering ], is a Python console application that focuses on demonstrating and testing operations within heap and stack data structures. It is designed to allow users to perform various operations such as inserting elements, printing the stack, and visualizing heaps as binary trees. Additionally, the application supports importing and exporting data from .csv files according to the type of data structure being manipulated. This functionality is particularly useful for educational purposes, enabling users to explore and understand the dynamic behavior of these fundamental data structures in computing.
 
 ### How to Run the Program
 To run the program, follow these steps:
@@ -19,8 +19,8 @@ To run the program, follow these steps:
 Using the program is straightforward:
 
 #### Start the Application
-- **Run the Code:** Open your IDE (Integrated Development Environment) and execute the code. This will launch the program.
-
+- **Run the Code:** Open your IDE and execute the code. This will launch the program.
+- 
 #### Navigating the Interface
 - **Access the Interface:** Once the code is running, an interface will appear in the command terminal.
 - **Menu Selection:** Use the menu to navigate through the application. Type the number corresponding to your desired action and press 'Enter' to select it.
@@ -162,11 +162,11 @@ This section of the report discusses how the application meets its functional re
     ```
 
 
-These detailed explanations and implementations highlight how the `bubble up` method functions differently in MaxHeap and MinHeap settings, underlining the polymorphic nature of this method and its importance in maintaining the integrity of heap structures.
+These explanations and implementations highlight how the `bubble up` method functions differently in MaxHeap and MinHeap settings, underlining the apparent polymorphism of this method.
 
 
 #### Feature 3: Heapify
-- **Description:** The `heapify` method is critical for maintaining the heap property across the entire data structure after any modifications, such as insertions or deletions. It ensures that the heap continues to meet its condition as a max-heap or min-heap by adjusting the positions of elements within the heap. This method is designed to be overridden in subclasses, following the principle of polymorphism, which allows each subclass to implement its specific behavior while adhering to a general contract.
+- **Description:** The `heapify` method is critical for maintaining the heap property across the entire data structure after any modifications, such as insertions or deletions. It ensures that the heap continues to meet its condition as a max-heap or min-heap by adjusting the positions of elements within the heap. This method is designed to be overridden in subclasses, also following the principle of polymorphism, which allows each subclass to implement its specific behavior while adhering to a general contract.
 
 - **Base Implementation:**
     ```python
@@ -247,7 +247,7 @@ These detailed explanations and implementations highlight how the `bubble up` me
     ```
 
 #### Feature 6: Clear Heap
-- **Description:** Resets the heap by clearing all elements from the heap array. This is useful for reinitializing the heap during testing or after completing certain operations.
+- **Description:** Resets the heap by clearing all elements from the heap array. This is useful for re-initializing the heap during testing or after completing certain operations.
 - **Code Snippet:**
     ```python
     def clear(self):
@@ -298,10 +298,10 @@ These detailed explanations and implementations highlight how the `bubble up` me
         return root
     ```
 
-These features encapsulate critical operations in heap management, ensuring that both MaxHeap and MinHeap can efficiently serve their purpose in a variety of applications where either maximum or minimum elements are periodically needed for further processing.
+These methods encapsulate critical attributes and variables in heap management.
 #### Feature 9: Get Max/Min 
 #### Get Max (MaxHeap)
-- **Description:** Retrieves the maximum element from the heap without removing it. This method is fundamental in max-heap operations where quick access to the largest element is frequently required. It simply returns the element at the root of the heap, ensuring constant time complexity, O(1). If the heap is empty, it returns `None`.
+- **Description:** Retrieves the maximum element from the heap without removing it. This method is fundamental in max-heap operations where quick access to the largest element is frequently required. It simply returns the element at the root of the heap. If the heap is empty, it returns `None`.
 - **Code Snippet:**
     ```python
     def get_max(self):
@@ -311,7 +311,7 @@ These features encapsulate critical operations in heap management, ensuring that
     ```
 
 #### Get Min (MinHeap)
-- **Description:** Retrieves the minimum element from the heap without removing it. This operation is crucial in min-heap applications where the smallest element needs to be accessed quickly and frequently, such as in priority queue implementations. It returns the root of the heap, which is the smallest element, with a time complexity of O(1). If the heap is empty, it returns `None`.
+- **Description:** Retrieves the minimum element from the heap without removing it. This operation is crucial in min-heap applications where the smallest element needs to be accessed quickly and frequently, such as in priority queue implementations. It returns the root of the heap which in this case is the smallest element. If the heap is empty, it returns `None`.
 - **Code Snippet:**
     ```python
     def get_min(self):
@@ -319,7 +319,7 @@ These features encapsulate critical operations in heap management, ensuring that
             return self._arr[0]
         return None
     ```
-These methods enhance the functionality of heap data structures by providing efficient access to the most critical elements (maximum or minimum) depending on the type of heap implemented. Both `get_max` and `get_min` play pivotal roles in various algorithmic processes where heaps are used, ensuring optimal performance and immediate data retrieval.
+These methods enhance the functionality of heap data structures by providing efficient access to the most critical elements (maximum or minimum) depending on the type of heap implemented. 
 #### Feature 10: Increase/Decrease Key
 #### Increase Key (MaxHeap)
 - **Description:** Modifies the value of an element within the MaxHeap by increasing its key, ensuring that the heap maintains its max-heap property afterward. This method is crucial when the priority of an element increases and it needs to be adjusted within the heap. The element is first updated to the new higher value, and then a `bubble up` operation is performed to relocate the element to its appropriate position in the heap.
@@ -416,7 +416,7 @@ The `CSVDataHandler` class provides functionality to interact with CSV files spe
         return wrapper
     ```
 
-This documentation provides a comprehensive overview of `CSVDataHandler` functionalities, explaining how data is managed in CSV format for both heap and stack structures. The inclusion of a validation decorator demonstrates the use of the decorator design pattern to add functionality maintainably.
+`CSVDataHandler` with the inclusion of a validation decorator demonstrates the use of the decorator design pattern to add functionality maintainably.
 
 ### CommandInvoker Class Overview
 
@@ -541,13 +541,13 @@ Using abstract methods in the command classes ensures that each command adheres 
 
 ## Results
 
-- **Implementation of Design Patterns:** Successfully implemented three design patterns—Singleton, Decorator, and Command—which significantly enhanced the functionality and robustness of the program. These patterns facilitated the management of application state and extended the capabilities of user command processing.
-- **Application of OOP Principles:** Applied all four pillars of Object-Oriented Programming—encapsulation, abstraction, inheritance, and polymorphism—making the program robust and maintainable. This approach helped in structuring the program into clear, modular components that are easier to manage and extend.
+- **Implementation of Design Patterns:** Successfully implemented three design patterns—Singleton, Decorator, and Command—which significantly enhanced the efficiency of the program. These patterns brought the management of application state and extended the capabilities of user command processing.
+- **Application of OOP Principles:** Applied all four pillars of Object-Oriented Programming—encapsulation, abstraction, inheritance, and polymorphism—making the program maintainable. This approach helped in structuring the program into clear, modular components that are easier to manage and extend.
 - **File Operations with CSV Files:** Integrated comprehensive file operations for reading from and writing to CSV files, which enabled effective data storage and manipulation, demonstrating practical file handling and data processing within the program.
 
 ## Conclusions
 
-This coursework has provided a deep dive into the fundamentals of Python, including basic syntax and advanced applications such as Object-Oriented Programming and design patterns. Through this project, I have achieved:
-- **A Robust Application Framework:** The use of design patterns and OOP principles has resulted in a robust, maintainable program structure that can efficiently handle complex data manipulations and user interactions.
-- **Practical Implementation Skills:** Gained practical experience in implementing file operations with CSV files, enhancing the program's ability to manage external data effectively.
+This coursework has provided an opportunity to delve into the fundamentals of Python, including basic syntax and advanced applications such as Object-Oriented Programming and design patterns. Through this project, I have achieved:
+- **A Decent Application Framework:** The use of design patterns and OOP principles has resulted in a solid program structure that can efficiently handle complex data manipulations and user interactions.
+- **Practical Implementation Skills:** Gained practical experience in implementing file operations with CSV files, enhancing the program's ability to manage external data and files effectively.
 - **Future Prospects:** The program offers a solid foundation for future enhancements, including the potential addition of a real-time updating interface and further detailed data processing features. This groundwork sets the stage for possible expansions, such as incorporating graphical user interfaces or extending functionality to handle additional data types or operations.
